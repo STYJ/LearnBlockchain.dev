@@ -9,7 +9,6 @@ tags = [
     "development",
 ]
 date = "2014-04-02"
-menu = "main"
 +++
 
 Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
