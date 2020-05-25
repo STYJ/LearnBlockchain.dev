@@ -1,6 +1,5 @@
 ---
 type: docs
-title: Introduction
 ---
 ![Blockchain](blockchain.png)
 
