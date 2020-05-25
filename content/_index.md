@@ -1,4 +1,5 @@
 ---
+title: LearnBlockchain.dev
 type: docs
 ---
 ![Blockchain terminologies](blockchain.jpg)
