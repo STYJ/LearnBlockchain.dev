@@ -1,7 +1,7 @@
 ---
 type: docs
 ---
-![Blockchain terminologies](blockchain.png)
+![Blockchain terminologies](blockchain.jpg)
 
 **LearnBlockchain.dev** is your one-stop educational resource for all things related to Blockchain, Bitcoin and Ethereum! 
 
