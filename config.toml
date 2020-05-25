@@ -19,7 +19,7 @@ enableGitInfo = true
 
 # (Optional) Theme is intended for documentation use, therefore it doesn't render taxonomy.
 # You can remove related files with config below
-disableKinds = ['taxonomy', 'taxonomyTerm']
+disableKinds = []
   
 [params]
   # (Optional, default true) Controls table of contents visibility on right side of pages.
