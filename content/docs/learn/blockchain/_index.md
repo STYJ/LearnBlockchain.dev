@@ -2,22 +2,11 @@
 bookCollapseSection: true
 weight: 1
 ---
+I'm sure you've heard about blockchain if not you wouldn't be here wanting to learn more. You might be 
 
-# Collapsed Level of Menu
 
-## Cognita laeva illo fracta
+at a very high level, you can think of blockchains as literally some blocks that are secured together via some digital chain. In fact, the blocks themselves are also secured with some kind of digital chain. 
 
-Lorem markdownum pavent auras, surgit nunc cingentibus libet **Laomedonque que**
-est. Pastor [An](http://est.org/ire.aspx) arbor filia foedat, ne [fugit
-aliter](http://www.indiciumturbam.org/moramquid.php), per. Helicona illas et
-callida neptem est *Oresitrophos* caput, dentibus est venit. Tenet reddite
-[famuli](http://www.antro-et.net/) praesentem fortibus, quaeque vis foret si
-frondes *gelidos* gravidae circumtulit [inpulit armenta
-nativum](http://incurvasustulit.io/illi-virtute.html).
+I suppose it might look something like this 
 
-1. Te at cruciabere vides rubentis manebo
-2. Maturuit in praetemptat ruborem ignara postquam habitasse
-3. Subitarum supplevit quoque fontesque venabula spretis modo
-4. Montis tot est mali quasque gravis
-5. Quinquennem domus arsit ipse
-6. Pellem turis pugnabant locavit
+insert image of a block wrapped in a chain that is connected to another block with a chain. 
