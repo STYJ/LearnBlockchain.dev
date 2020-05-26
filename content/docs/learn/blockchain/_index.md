@@ -1,12 +1,21 @@
 ---
 bookCollapseSection: true
 weight: 1
+description: "TLDR of what blockchain is"
 ---
-I'm sure you've heard about blockchain if not you wouldn't be here wanting to learn more. You might be 
+# Explain blockchain in 6 steps 
+1. Imagine that you have some tasks:
+   - help jane to transfer money to john
+   - do some groceries
+   - cook dinner
+2. Create a physical representation for each task e.g. 1 task = 1 card 
+   <insert image of 3 cards>
+3. Find yourself a box and put these tasks into the box
+      
+4. Tie the box with an unbreakable magic string
 
+5. Ask your friend to repeat steps 1 - 4 for another set of tasks
 
-at a very high level, you can think of blockchains as literally some blocks that are secured together via some digital chain. In fact, the blocks themselves are also secured with some kind of digital chain. 
+6. "Connect" the first box and the second box with another unbreakable magic string.
 
-I suppose it might look something like this 
-
-insert image of a block wrapped in a chain that is connected to another block with a chain. 
+Voilà! You just created a blockchain. 
