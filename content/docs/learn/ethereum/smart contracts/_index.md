@@ -1,5 +1,6 @@
 ---
 bookCollapseSection: true
-weight: 2
 ---
-TLDR of bitcoin
+
+TLDR of smart contracts
+
