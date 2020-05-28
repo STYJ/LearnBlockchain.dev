@@ -2,23 +2,15 @@
 bookCollapseSection: true
 weight: 1
 description: "TLDR of what blockchain is"
+bookToC: false
 ---
-# Explain blockchain in 5 steps 
-1. Imagine that you run a company that accept random miscellaneous jobs:
-   - help jane to transfer money to john
-   - do some groceries for mom
-   - cook dinner for bob
-   - 
-2. Create a physical representation for each task e.g. 1 task = 1 card 
-   <insert image of 3 cards>
-3. Everytime you complete a task, put the card into a box. Today I completed 3 tasks.
-      
-4. Tie the box with an unbreakable magic string
+# Blockchain
+## What is a Blockchain?
+The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the blocks and the chain. A block can be thought of as a collated list of tasks to be performed by an individual. 
 
-5. Ask your friend to repeat steps 1 - 4 for another set of tasks
+< insert image of a block with some tasks >
 
-6. "Connect" the first box and the second box with another unbreakable magic string.
+However, blocks by themselves are not very cool since it only aggregate actions into a single unit. By leveraging on cryptography and some smart design choices, the "chain" that connects these blocks elevates this blocks data structure to a whole new level! Any malicious or unintended changes to previous blocks will automatically be propagated down to the last block so it becomes immediately evident if someone tries to tamper with past transactions.
 
-Voilà! You just created a blockchain. 
-
+< insert my artistic impression of a blockchain! >
 
