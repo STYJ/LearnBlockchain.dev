@@ -1,5 +1,4 @@
 ---
-bookCollapseSection: true
 weight: 3
 ---
 https://xkcd.com/2267/
