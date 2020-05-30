@@ -6,11 +6,14 @@ bookToC: false
 ---
 # Blockchain
 ## What is a Blockchain?
-The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the blocks and the chain. A block can be thought of as a collated list of tasks to be performed by an individual. 
+The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the blocks and the chain. *A block can be thought of as a collated list of transactions* (you can think of them as tasks!).
 
-< insert image of a block with some tasks >
+< insert image of a block with some transactions >
 
-However, blocks by themselves are not very cool since it only aggregate actions into a single unit. By leveraging on cryptography and some smart design choices, the "chain" that connects these blocks elevates this blocks data structure to a whole new level! Any malicious or unintended changes to previous blocks will automatically be propagated down to the last block so it becomes immediately evident if someone tries to tamper with past transactions.
+In the diagram above, this block contains 6 transactions. Each transaction is initiated by someone with the purpose of achieving some desired outcome. For example, Alice (the initiator) wants to lend 5 bucks to Bob (desired outcome) i.e. the wallet balances of Alice and Bob should decrease and increase by 5 respectively once this transaction has completed. 
 
-< insert my artistic impression of a blockchain! >
+That said however, blocks by themselves are not very cool. A block is just a representation of tasks that have been aggregated together. But by leveraging on cryptography and some smart design choices, the "chain" that connects these blocks elevates this block data structure to a whole new level!
 
+< insert image of blocks connected with a chain with genesis block header and latest block>
+
+An in-depth look at this upgrade can be found [on the next page](properties.md) but effectively, *the chain that connnects these blocks enables the automatic, immediate and instant propagation any changes (be it malicious, unintended or genuine) from an earlier block to the latest block*. Users are able to detect if an earlier block has been modified without having to comb through the entire chain! How cool is that? It is cool right? No...? Okay maybe it is not entirely obvious why this functionality is amazing so read the [benefits and usecases](benefits%20and%20usecases.md) page to understand better!
