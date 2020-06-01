@@ -1,0 +1,34 @@
+<svg width="739.9375" height="150" xmlns="http://www.w3.org/2000/svg">
+ <metadata id="metadata203">image/svg+xml</metadata>
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="741.9375" height="152" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="g0001" font-family="Bitstream Vera Sans" stroke-width="1px" font-style="normal">
+   <text transform="matrix(1,0,0,1,0,0) " x="48.674523" y="44.881248" id="text5" font-weight="bold" font-size="28.799999px">Input</text>
+   <text transform="matrix(1,0,0,1,0,0) " x="539.572602" y="44.881248" id="text7" fill="#000000" font-weight="bold" font-size="28.799999px">Digest</text>
+   <rect width="141.20421" height="78" x="12.5" y="56.881248" id="rect9" stroke-width="0.997194" stroke="#000000" fill="#00ffff"/>
+   <text x="68.156792" y="102.129684" id="text11" fill="#000000" font-weight="normal" font-size="19.200001px">Fox</text>
+   <rect width="154" height="75" x="214.5" y="58.381248" id="rect13" stroke="#000000" fill="#ffff90"/>
+   <text x="238.1875" y="79.881248" id="text15" fill="#000000" font-weight="normal" font-size="19.200001px">cryptographic</text>
+   <text x="273.898438" y="102.129684" id="text17" fill="#000000" font-weight="normal" font-size="19.200001px">hash</text>
+   <text x="259.507813" y="122.881248" id="text19" fill="#000000" font-weight="normal" font-size="19.200001px">function</text>
+   <rect width="298.93976" height="60" x="428.5" y="65.881248" id="rect21" stroke-width="0.988396" stroke="#000000" fill="#ff9ccf"/>
+   <text x="439.626129" y="90.881248" id="text23" font-family="Courier" fill="#000000" font-weight="bold" font-size="19.200001px">DFCD 3454 BBEA 788A 751A</text>
+   <text x="439.704254" y="113.881248" id="text25" font-family="Courier" fill="#000000" font-weight="bold" font-size="19.200001px">696C 24D9 7009 CA99 2D17</text>
+   <path d="m153.39179,95.88125c61.17891,0 61.17891,0 61.17891,0" id="path28" stroke-width="1.514665px" stroke="#000000" fill="none"/>
+   <g id="g2001">
+    <path d="m214.57069,95.88125l-16,6l0,-12l16,6z" id="path31" stroke-width="1.5px" stroke="#000000" fill="#000000"/>
+   </g>
+   <g id="g5997">
+    <path d="m368.5,95.88125c60,0 60,0 60,0" id="path34" stroke-width="1.5px" stroke="#000000" fill="none"/>
+    <g id="g2002">
+     <path d="m428.5,95.88125l-16,6l0,-12l16,6z" id="path37" stroke-width="1.5px" stroke="#000000" fill="#000000"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
