@@ -4,7 +4,7 @@ type: docs
 description: "What is LearnBlockchain.dev about"
 BookToC: false
 ---
-![Blockchain terminologies](/terminologies.jpg)
+![Blockchain terminologies](/terminologies.png)
 
 **LearnBlockchain.dev** is your one-stop educational resource for all things related to Blockchain, Bitcoin and Ethereum! 
 
