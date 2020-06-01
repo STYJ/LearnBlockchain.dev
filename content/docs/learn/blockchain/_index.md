@@ -3,38 +3,65 @@ bookCollapseSection: true
 weight: 1
 description: "TLDR of what blockchain is"
 ---
+
 # Blockchain
+
 ## What is a Blockchain?
-The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the blocks and the chain. *A block can be thought of as a collated list of transactions* (you can think of them as tasks!).
+
+The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the block and the chain. _A block can be thought of as a collated list of transactions_ like tasks to do on a to-do list.
 
 < insert image of a block with some transactions >
+Caption: This block contains 6 transactions.
 
-In the diagram above, this block contains 6 transactions. Each transaction is initiated by someone with the purpose of achieving some desired outcome. For example, Alice (the initiator) wants to lend 5 bucks to Bob (desired outcome) i.e. the wallet balances of Alice and Bob should decrease and increase by 5 respectively once this transaction has completed. 
+Each transaction is initiated by someone with the purpose of achieving some desired outcome. For example, Alice (the initiator) wants to lend 5 bucks to Bob i.e. the wallet balances of Alice and Bob should decrease and increase by 5 respectively (desired outcome) once this transaction has completed.
 
-That said however, blocks by themselves are not very cool. A block is just a representation of tasks that have been aggregated together. But by leveraging on cryptography and some smart design choices, the "chain" that connects these blocks elevates this block data structure to a whole new level!
+Unfortunately, blocks by themselves are not very interesting since it only aggregates tasks together. But by leveraging on cryptography and some smart design choices, _the "chain" that connects these blocks is able to automatically, immediately and instantly propagate any changes (be it genuine, malicious or unintended) from an earlier block to the latest block_!
 
 < insert image of blocks connected with a chain with genesis block header and latest block>
 
-This upgrade enables *the automatic, immediate and instant propagation any changes (be it malicious, unintended or genuine) from an earlier block to the latest block*. Users are able to detect if an earlier block has been modified without having to comb through the entire chain! Talk about optimisation!
+This means that users are now able to detect if an earlier block has been modified without having to comb through the entire chain! Talk about optimisation!
 
-## In-depth look at how the "chain" works
+## Understanding how the "chain" works
 
-The automatic, immediate and instant propogataion of any changes to earlier blocks in a blockchain is achieved through the cryptographic algorithm known as hashing. 
+The "chain" is described earlier as "cryptography and some smart design choices". The cryptographic algorithm that enables this enhanced functionality is known as hashing.
 
 ### Hashing
 
-In short, hashing
+Without going too in depth, _hashing is the act of using a hash function on some input_. This hash function takes in an arbitrary input and returns a fixed number of characters.
 
-A more 
+![an example of hashing the string Fox with a SHA1 hash function](/hashing_example_1.svg)
 
-To fully grasp how the "chain" enables the abovementioned functionality, we must first deconstruct blocks a little further. 
+For example, the word `Fox` returns the output `DFCD 3454 BBEA 788A 751A 696C 24D9 7009 CA99 2D17` when hashed with a `SHA-1` hash function.
 
+A feature of good hashing algorithms is that _a small change to the input should return an output that appears completely uncorrelated to the previous output_.
 
- we understand that the blockchain data structure consists of 2 elements; blocks
+![an example of a completely uncorrelated output by changing 1 character in input](/hashing_example_2.svg)
 
+By replacing the character `v` with the character `u` in the word `over`, the hash function returns a seemingly unrelated output. If you are interested to learn more about hashing, you may do so [here](./advanced_topics/hashing.md).
 
+### Block Headers
 
-## 
+A block is defined earlier as "a collated list of transactions" which is not entirely wrong but not 100% correct either. _A block also contains a block header which is where you store other information related to this block_. At minimum, it should contain the following:
 
+1. output of the hash of the previous block
+2. timestamp of when the block is mined
+3. a nonce value
 
-How cool is that? It is cool right? No...? Okay maybe it is not entirely obvious now why this functionality is amazing so read the [benefits and usecases](benefits%20and%20usecases.md) page to understand better!
+For the purpose of this explanation, we can just focus on the first field and ignore the other 2 fields. The output generated by hashing any block (hereinafter referred to as a _block hash_) is generated by passing in the entire block as input into a hash function i.e.
+
+```javascript
+// since hash(input) = output
+// hash(current block) = block hash
+// hash(block header + list of transactions) = block hash
+
+// Note that the "+" symbol (which commonly denotes addition) is used in a hand-waving manner to represent concatenation.
+```
+The field "output of the hash of the previous block" is therefore referring to the block hash of the previous block. This is equivalent to the output generated by hashing the previous block.
+
+< insert image of a block with a header containing the hash of the previous block >
+
+In the example block above, the block hash (`0x328ac0f2...`) is computed by executing `hash(0xe732e3c9... + list of transactions)`. 
+
+### Putting it all together
+
+< insert image of blocks connected with a chain with block headers, genesis block has prev hash as 0x00000...>
