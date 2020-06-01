@@ -2,7 +2,6 @@
 bookCollapseSection: true
 weight: 1
 description: "TLDR of what blockchain is"
-bookToC: false
 ---
 # Blockchain
 ## What is a Blockchain?
@@ -16,4 +15,26 @@ That said however, blocks by themselves are not very cool. A block is just a rep
 
 < insert image of blocks connected with a chain with genesis block header and latest block>
 
-An in-depth look at this upgrade can be found [on the next page](properties.md) but effectively, *the chain that connnects these blocks enables the automatic, immediate and instant propagation any changes (be it malicious, unintended or genuine) from an earlier block to the latest block*. Users are able to detect if an earlier block has been modified without having to comb through the entire chain! How cool is that? It is cool right? No...? Okay maybe it is not entirely obvious why this functionality is amazing so read the [benefits and usecases](benefits%20and%20usecases.md) page to understand better!
+This upgrade enables *the automatic, immediate and instant propagation any changes (be it malicious, unintended or genuine) from an earlier block to the latest block*. Users are able to detect if an earlier block has been modified without having to comb through the entire chain! Talk about optimisation!
+
+## In-depth look at how the "chain" works
+
+The automatic, immediate and instant propogataion of any changes to earlier blocks in a blockchain is achieved through the cryptographic algorithm known as hashing. 
+
+### Hashing
+
+In short, hashing
+
+A more 
+
+To fully grasp how the "chain" enables the abovementioned functionality, we must first deconstruct blocks a little further. 
+
+
+ we understand that the blockchain data structure consists of 2 elements; blocks
+
+
+
+## 
+
+
+How cool is that? It is cool right? No...? Okay maybe it is not entirely obvious now why this functionality is amazing so read the [benefits and usecases](benefits%20and%20usecases.md) page to understand better!
