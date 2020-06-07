@@ -10,58 +10,65 @@ description: "TLDR of what blockchain is"
 
 The term "Blockchain" is derived from how digital blocks are cryptographically chained together. Stripping away other auxiliary features, the blockchain data structure consists fundamentally of 2 elements; the block and the chain. _A block can be thought of as a collated list of transactions_ like tasks to do on a to-do list.
 
-< insert image of a block with some transactions >
-Caption: This block contains 6 transactions.
+{{< figure src="/block_with_6_transactions.png" alt="A block with 6 transactions" caption="A block with 6 transactions" height="300" width="auto" >}}
 
 Each transaction is initiated by someone with the purpose of achieving some desired outcome. For example, Alice (the initiator) wants to lend 5 bucks to Bob i.e. the wallet balances of Alice and Bob should decrease and increase by 5 respectively (desired outcome) once this transaction has completed.
 
-Unfortunately, blocks by themselves are not very interesting since it only aggregates tasks together. But by leveraging on cryptography and some smart design choices, _the "chain" that connects these blocks is able to automatically, immediately and instantly propagate any changes (be it genuine, malicious or unintended) from an earlier block to the latest block_!
+On the other hand, the "chain" is what connects these blocks together. By leveraging on cryptography and some smart design choices, _this "chain" is able to automatically, immediately and instantly propagate any changes (be it genuine, malicious or unintended) from an earlier block to the latest block_!
 
-< insert image of blocks connected with a chain with genesis block header and latest block>
+{{< figure src="/chain_of_blocks.png" alt="A chain of blocks" caption="A chain of blocks"  >}}
 
 This means that users are now able to detect if an earlier block has been modified without having to comb through the entire chain! Talk about optimisation!
 
 ## Understanding how the "chain" works
 
-The "chain" is described earlier as "cryptography and some smart design choices". The cryptographic algorithm that enables this enhanced functionality is known as hashing.
+The "chain" is described earlier as "cryptography and some smart design choices". The cryptographic algorithm behind the "chain" is known as _hashing_ while the "smart design choices" is related to how _blocks are linked through their headers_.
 
 ### Hashing
 
-Without going too in depth, _hashing is the act of using a hash function on some input_. This hash function takes in an arbitrary input and returns a fixed number of characters.
+Without going too [in depth](advanced_topics/hashing.md), _hashing is the act of using a hash function on an input_. A hash function takes in an arbitrary length input and returns a fixed length output. This output is commonly referred to as the hash value or a digest.
 
-![an example of hashing the string Fox with a SHA1 hash function](/hashing_example_1.svg)
+{{< figure src="/hashing_fox_example.svg" alt="Hashing the word 'Fox' with a SHA-1 hash function" caption="Hashing the word 'Fox' with a SHA-1 hash function" >}}
 
-For example, the word `Fox` returns the output `DFCD 3454 BBEA 788A 751A 696C 24D9 7009 CA99 2D17` when hashed with a `SHA-1` hash function.
+In the example above, the word `Fox` is hashed with a SHA-1 hash function. This generates a hash value of `DFCD 3454 BBEA 788A 751A 696C 24D9 7009 CA99 2D17`. 
 
-A feature of good hashing algorithms is that _a small change to the input should return an output that appears completely uncorrelated to the previous output_.
+A characteristic of good hash functions is that _a small change to the input should return an output that appears completely uncorrelated to the previous output_. This effect is known as the [avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect).
 
-![an example of a completely uncorrelated output by changing 1 character in input](/hashing_example_2.svg)
+{{< figure src="/hashing_avalanche_effect_example.svg" alt="Avalanche effect in hashing algorithms" caption="Avalanche effect in hashing algorithms" >}}
 
-By replacing the character `v` with the character `u` in the word `over`, the hash function returns a seemingly unrelated output. If you are interested to learn more about hashing, you may do so [here](./advanced_topics/hashing.md).
+By replacing the character `v` with the character `u` in the word `over`, the SHA-1 hash function returns a seemingly unrelated output. Try it yourself [here](https://emn178.github.io/online-tools/sha1.html)!
 
 ### Block Headers
 
-A block is defined earlier as "a collated list of transactions" which is not entirely wrong but not 100% correct either. _A block also contains a block header which is where you store other information related to this block_. At minimum, it should contain the following:
+A block is defined earlier as "a collated list of transactions" which is not entirely wrong but not quite correct either. _A block also contains a header which is where other information associated to this block is stored_. The block header should contain the following at minimum:
 
-1. output of the hash of the previous block
+1. previous block hash
 2. timestamp of when the block is mined
 3. a nonce value
 
-For the purpose of this explanation, we can just focus on the first field and ignore the other 2 fields. The output generated by hashing any block (hereinafter referred to as a _block hash_) is generated by passing in the entire block as input into a hash function i.e.
+For the purpose of this explanation, we can just focus on the first parameter. A _block hash is the output generated by hashing an entire block_ i.e.
 
 ```javascript
-// since hash(input) = output
-// hash(current block) = block hash
-// hash(block header + list of transactions) = block hash
-
-// Note that the "+" symbol (which commonly denotes addition) is used in a hand-waving manner to represent concatenation.
+// Formula: hash(input) = output
+// input = block, output = block hash
+// block can be further deconstructed into block header & list of transactions
+// therefore hash(block header & list of transactions) = block hash
 ```
-The field "output of the hash of the previous block" is therefore referring to the block hash of the previous block. This is equivalent to the output generated by hashing the previous block.
+Hence the field "previous block hash" is referencing to the block hash generated by hashing the previous block!
 
-< insert image of a block with a header containing the hash of the previous block >
+{{< figure src="/block_with_header.png" alt="A block with its block header" caption="A block with its block header" height="300" width="auto" >}}
 
-In the example block above, the block hash (`0x328ac0f2...`) is computed by executing `hash(0xe732e3c9... + list of transactions)`. 
+The block above has a block hash of `0x328ac0f2...`. This hash is computed by hashing together the block header (containing the previous block header `0xe732e3c9`) and the list of transactions.
 
 ### Putting it all together
+Reiterating the points mentioned earlier:
 
-< insert image of blocks connected with a chain with block headers, genesis block has prev hash as 0x00000...>
+1. A block hash is generated by hashing a block.
+
+2. Blocks are “connected” via a field / parameter in the block header which is commonly referred to as the “previous block hash”.
+
+{{< figure src="/chain_of_blocks_with_header.png" alt="An example of a chain of blocks connected via their block headers" caption="An example of a chain of blocks connected via their block headers"  >}}
+
+The product of this design is what enables the automatic, immediate and instant propagation of any changes from an earlier block to the latest block!
+
+To illustrate this point better, imagine that you have a blockchain with 3 blocks (just like in the diagram above).....
