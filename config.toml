@@ -75,3 +75,7 @@ disableKinds = []
   BookServiceWorker = true
 [taxonomies]
   tag = "tags"
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3

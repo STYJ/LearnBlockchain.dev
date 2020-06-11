@@ -20,6 +20,8 @@ While a block represents an aggregated list of actions, _the "chain" is what con
 
 Moreover, _this chain also provides the additional functionality of automatically, immediately and instantly propagate any modifications (be it genuine, malicious or unintended) from an earlier block to the latest block_!
 
+---
+
 ## Understanding how the "chain" works
 
 The “propagation of changes” effect is achieved by leveraging on cryptography and some smart design choices. The cryptographic algorithm behind this is known as _hashing_ and the "smart design choices" pertains to how _blocks are linked through their headers_.
@@ -77,6 +79,8 @@ Astute readers will notice that while comparing 2 blockchains, it is trivial to 
 
 These problems are solved through the consensus mechanism of the blockchain e.g. Nakamoto consensus / PBFT but it is out of the scope of this explanation.
 
+---
+
 ## Summary
 
 The blockchain data structure is effectively a collated list of transactions that are represented as blocks and each block is linked to the next block via the block header. The application of hashing to this design enables changes made to earlier blocks to be propagated to the latest block. This means that users do not have to comb the entire blockchain to determine if the blockchain has been modified. Talk about optimisation!
@@ -84,3 +88,5 @@ The blockchain data structure is effectively a collated list of transactions tha
 That said however, there are some caveats that you should be aware of e.g. just because you can tell whether a blockchain has been altered does not mean that you know which blockchain is the altered blockchain (or which is the "true" blockchain) and that you will not be able to tell where the blockchain was altered from.
 
 Now that you have a better grasp of the blockchain data structure, let us learn about the [properties of a blockchain](properties.md) to understand how blockchain differs from other types of ledgers (databases)!
+
+---
